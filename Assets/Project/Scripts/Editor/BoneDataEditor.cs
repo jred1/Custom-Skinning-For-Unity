@@ -25,8 +25,8 @@ public class BoneDataEditor : EditorWindow
     }
     private void OnGUI()
     {
-        input = (GameObject)EditorGUILayout.ObjectField(input, typeof(GameObject),false);
-        
+        input = (GameObject)EditorGUILayout.ObjectField(input, typeof(GameObject), false);
+
         if (GUILayout.Button("Bake"))
         {
             Bake();
@@ -43,34 +43,43 @@ public class BoneDataEditor : EditorWindow
         SkinnedMeshRenderer[] skinRenderers = GOI.GetComponentsInChildren<SkinnedMeshRenderer>();//modify to allow Mesh renderer on root object
         for (int i = 0; i < skinRenderers.Length; i++)
         {
-            string fullPath = "";
+            string relativePath = "";
             if (previousMeshPath != "")
             {
-                
+                //does not return relative path, causes error
+                /*
                 fullPath = EditorUtility.SaveFilePanel(
                      "Save Modifed Mesh",
-                     Path.GetDirectoryName(previousPrefabPath),
+                     previousPrefabPath,
                      skinRenderers[i].sharedMesh.name + " Modified",
                      "asset");
-                
-            }
-            else
-            {
-                
-                fullPath = EditorUtility.SaveFilePanelInProject(
+                */
+
+                relativePath = EditorUtility.SaveFilePanelInProject(
                      "Save Modifed Mesh",
                      skinRenderers[i].sharedMesh.name + " Modified",
                      "asset",
                      "Save file");
-                //previousMeshPath = fullPath;
+            }
+            else
+            {
+
+                relativePath = EditorUtility.SaveFilePanelInProject(
+                     "Save Modifed Mesh",
+                     skinRenderers[i].sharedMesh.name + " Modified",
+                     "asset",
+                     "Save file");
+
+                previousMeshPath = Path.GetDirectoryName(relativePath);
             }
 
             Mesh mesh = new Mesh();
-            if (fullPath != "")
+            if (relativePath != "")
             {
                 mesh = ModifyMesh(skinRenderers[i].gameObject);
-                AssetDatabase.CreateAsset(mesh, fullPath);
+                AssetDatabase.CreateAsset(mesh, relativePath);
                 AssetDatabase.SaveAssets();
+                //Debug.Log(Application.dataPath);
                 success = true;
             }
             else
@@ -85,20 +94,20 @@ public class BoneDataEditor : EditorWindow
         ///---Save Prompt---///
         if (success)
         {
-            string fullPath2;
+            string fullPath;
             if (previousPrefabPath != "")
             {
-                fullPath2 = EditorUtility.SaveFilePanel("Save Modifed Prefab", Path.GetDirectoryName(previousPrefabPath), input.name + " Modified", "prefab");
+                fullPath = EditorUtility.SaveFilePanel("Save Modifed Prefab", Path.GetDirectoryName(previousPrefabPath), input.name + " Modified", "prefab");
             }
             else
             {
-                fullPath2 = EditorUtility.SaveFilePanelInProject("Save Modifed Prefab", input.name + " Modified", "prefab", "Save file");
-                previousPrefabPath = fullPath2;
+                fullPath = EditorUtility.SaveFilePanelInProject("Save Modifed Prefab", input.name + " Modified", "prefab", "Save file");
+                previousPrefabPath = fullPath;
             }
 
-            if (fullPath2 != "")
+            if (fullPath != "")
             {
-                PrefabUtility.SaveAsPrefabAsset(GOI, fullPath2, out success);
+                PrefabUtility.SaveAsPrefabAsset(GOI, fullPath, out success);
             }
             if (success)
                 Debug.Log("Prefab Save Successful");

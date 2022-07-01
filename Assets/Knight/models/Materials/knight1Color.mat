@@ -10,7 +10,7 @@ Material:
   m_Name: knight1Color
   m_Shader: {fileID: -6465566751694194690, guid: 31447a8ce1a3958418338d05ddf72649, type: 3}
   m_ShaderKeywords: _NORMALMAP
-  m_LightmapFlags: 6
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -85,7 +85,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Boolean_15df592cf0e746f9b91603d2e52b14ae: 1
-    - Vector1_87602f51b1eb41f8b0a8fcf66b605c35: 2
+    - Vector1_87602f51b1eb41f8b0a8fcf66b605c35: 1
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
