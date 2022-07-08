@@ -34,19 +34,17 @@ void Linear_float(float4 pos, float4 bone_ids, float4 bone_weights, out float4 v
 
 void Linear_Opt_float(float4 pos, float4 norm, float4 bone_ids, float4 bone_weights, float bone_count, out float4 v, out float4 n) 
 {
+    int i;
+    float totalWeight = 0;
+    for(i = 0; i < bone_count; i++){
+        totalWeight +=  bone_weights[i];
+    }
 
-    float totalWeight = bone_weights.x + bone_weights.y + bone_weights.z + bone_weights.w;
-
-    float4x4 relativeTransform;
-    /*
-    relativeTransform = (bone_weights[0]/ totalWeight) * mul(bones[bone_ids[0]], bindPose[bone_ids[0]]); 
-    for(int i = 1; i < bone_count && bone_weights[i] > 0.001; i++){
+    float4x4 relativeTransform = (bone_weights[0]/ totalWeight) * mul(bones[bone_ids[0]], bindPose[bone_ids[0]]);
+    for(i = 1; i < bone_count; i++){
         relativeTransform =  relativeTransform + (bone_weights[i] / totalWeight) * mul(bones[bone_ids[i]], bindPose[bone_ids[i]]);
-    }*/
-    relativeTransform = (bone_weights.x/ totalWeight) * mul(bones[bone_ids.x], bindPose[bone_ids.x]);  
-    relativeTransform =  relativeTransform + (bone_weights.y / totalWeight) * mul(bones[bone_ids.y], bindPose[bone_ids.y]);
-    relativeTransform =  relativeTransform + (bone_weights.z / totalWeight) * mul(bones[bone_ids.z], bindPose[bone_ids.z]);
-    relativeTransform =  relativeTransform + (bone_weights.w / totalWeight) * mul(bones[bone_ids.w], bindPose[bone_ids.w]);
+    }
+
     v = mul(relativeTransform, pos);
     n = mul(relativeTransform, norm);
 }

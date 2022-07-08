@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoneTransformDataConverted : MonoBehaviour
+public class ReferenceSkinning : MonoBehaviour
 {
     public float testing;
 

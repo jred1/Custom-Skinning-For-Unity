@@ -33,6 +33,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Boolean_15df592cf0e746f9b91603d2e52b14ae: 1
+    - Vector1_1d365f8a0bfc4c3fa2e757ef0c0fbeb4: 1
     - Vector1_87602f51b1eb41f8b0a8fcf66b605c35: 4
     m_Colors: []
   m_BuildTextureStacks: []
