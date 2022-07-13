@@ -5,21 +5,21 @@ using Unity.Mathematics;
 
 public struct quat
 {
-    float4 coeff;
+    public float4 coeff;
 
     #region Constructors
     public quat(Matrix4x4 t)
     {
-        float trace = t.m00 + t.m11 + t.m22;
+        float trace = 1.0f + t.m00 + t.m11 + t.m22;
 
         float S, X, Y, Z, W;
 
         if (trace > 0.000001f){
-            S = math.sqrt(trace + 1.0f) * 2.0f;
+            S = math.sqrt(trace) * 2.0f;
 
-            X = (t.m21 - t.m12) / S;
-            Y = (t.m02 - t.m20) / S;
-            Z = (t.m10 - t.m01) / S;
+            X = (t.m12 - t.m21) / S;
+            Y = (t.m20 - t.m02) / S;
+            Z = (t.m01 - t.m10) / S;
             W = 0.25f * S;
         }
         else if (t.m00 > t.m11 && t.m00 > t.m22){
@@ -27,8 +27,8 @@ public struct quat
 
             X = 0.25f * S;
             Y = (t.m01 + t.m10) / S;
-            Z = (t.m02 + t.m20) / S;
-            W = (t.m02 - t.m20 ) / S;
+            Z = (t.m20 + t.m02) / S;
+            W = (t.m12 - t.m21) / S;
         }
         else if (t.m11 > t.m22){
             S  = math.sqrt(1.0f + t.m11 - t.m00 - t.m22) * 2.0f;
@@ -36,18 +36,18 @@ public struct quat
             X = (t.m01 + t.m10) / S;
             Y = 0.25f * S;
             Z = (t.m12 + t.m21) / S;
-            W = (t.m02 - t.m20) / S;
+            W = (t.m20 - t.m02) / S;
         }
         else {
-            S  = math.sqrt( 1.0f + t.m22 - t.m00 - t.m11 ) * 2.0f;
+            S  = math.sqrt(1.0f + t.m22 - t.m00 - t.m11) * 2.0f;
 
-            X = (t.m02 + t.m20) / S;
+            X = (t.m20 + t.m02) / S;
             Y = (t.m12 + t.m21) / S;
             Z = 0.25f * S;
-            W = (t.m10 - t.m01) / S;
+            W = (t.m01 - t.m10) / S;
         }
 
-        coeff = new float4(X,Y,Z,W);
+        coeff = new float4(-X,-Y,-Z,W);
     }
 
     public quat(float x, float y, float z, float w){
@@ -89,11 +89,12 @@ public struct quat
     #region Operators
     public static quat operator *(quat q1, quat q2)
     {
+        //when q = (v,w), (w1*v2+w2*v1+(v1xv2),w1*w2-v1*v2)
         return new quat(
-        q1.coeff.w*q2.coeff.w - q1.coeff.x*q2.coeff.x - q1.coeff.y*q2.coeff.y - q1.coeff.z*q2.coeff.z,
         q1.coeff.w*q2.coeff.x + q1.coeff.x*q2.coeff.w + q1.coeff.y*q2.coeff.z - q1.coeff.z*q2.coeff.y,
         q1.coeff.w*q2.coeff.y + q1.coeff.y*q2.coeff.w + q1.coeff.z*q2.coeff.x - q1.coeff.x*q2.coeff.z,
-        q1.coeff.w*q2.coeff.z + q1.coeff.z*q2.coeff.w + q1.coeff.x*q2.coeff.y - q1.coeff.y*q2.coeff.x);
+        q1.coeff.w*q2.coeff.z + q1.coeff.z*q2.coeff.w + q1.coeff.x*q2.coeff.y - q1.coeff.y*q2.coeff.x,
+        q1.coeff.w*q2.coeff.w - q1.coeff.x*q2.coeff.x - q1.coeff.y*q2.coeff.y - q1.coeff.z*q2.coeff.z);
     }
     public static quat operator *(quat q1, float f1)
     {
