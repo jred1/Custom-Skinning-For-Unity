@@ -2187,6 +2187,14 @@ PrefabInstance:
       propertyPath: m_ReflectionProbeUsage
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: ffaf641b210f5ea41952cf36f1379d66, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c36682df36ee084da2504f74135eaf1, type: 2}
+    - target: {fileID: 13700002, guid: ffaf641b210f5ea41952cf36f1379d66, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5928625a58ac2074e948b48d2b4dc428, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffaf641b210f5ea41952cf36f1379d66, type: 3}
 --- !u!1 &1080286757635795010 stripped
