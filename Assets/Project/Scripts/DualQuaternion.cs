@@ -24,6 +24,8 @@ public struct dualQuat
     #endregion
 
     #region Methods
+
+    //Expensive?
     private static quat quat_dual_from( quat q, float3 t){
         float x =  0.5f*( t.x * q.w() + t.y * q.z() - t.z * q.y());
         float y =  0.5f*(-t.x * q.z() + t.y * q.w() + t.z * q.x());

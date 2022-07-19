@@ -54,14 +54,15 @@ public class SkinningController : MonoBehaviour
     void Update()
     {
         boneTransforms = skinRenderer.bones;
+        Matrix4x4 meshMatrix = transform.worldToLocalMatrix;
         if (fixedType == 0){
             for (int i = 0; i < boneCount; i++)
-                boneMatrices[i] = transform.worldToLocalMatrix * boneTransforms[i].localToWorldMatrix;
+                boneMatrices[i] = meshMatrix * boneTransforms[i].localToWorldMatrix;
             bones.SetData(boneMatrices);
         }
         if (fixedType == 1){
             for (int i = 0; i < boneCount; i++)
-                boneDQs[i] = new dualQuat(transform.worldToLocalMatrix * boneTransforms[i].localToWorldMatrix);
+                boneDQs[i] = new dualQuat(meshMatrix * boneTransforms[i].localToWorldMatrix);
             bones.SetData(boneDQs);
         }
 
