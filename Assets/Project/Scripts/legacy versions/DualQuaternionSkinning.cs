@@ -14,8 +14,8 @@ public class DualQuaternionSkinning : MonoBehaviour
     private Transform[] boneTransforms;
     private int boneCount;
 
-    private dualQuat[] bindDQ;
-    private dualQuat[] boneDQ;
+    private DualQuat[] bindDQ;
+    private DualQuat[] boneDQ;
 
     private ComputeBuffer bones;
     private ComputeBuffer bindPose;
@@ -30,8 +30,8 @@ public class DualQuaternionSkinning : MonoBehaviour
 
         boneTransforms = skinRenderer.bones; // bind pose for now. implement code to save this
         boneCount = boneTransforms.Length;
-        bindDQ = new dualQuat[boneCount];
-        boneDQ = new dualQuat[boneCount];
+        bindDQ = new DualQuat[boneCount];
+        boneDQ = new DualQuat[boneCount];
         SetBuffersUnsafe();
 
         //get and save bind pose
@@ -40,7 +40,7 @@ public class DualQuaternionSkinning : MonoBehaviour
         {
             // change to use quaternions before the multiplication
             temp = transform.worldToLocalMatrix * boneTransforms[i].localToWorldMatrix;
-            bindDQ[i] = new dualQuat(temp.inverse);
+            bindDQ[i] = new DualQuat(temp.inverse);
         }
         bindPose.SetData(bindDQ);
 
@@ -57,7 +57,7 @@ public class DualQuaternionSkinning : MonoBehaviour
         boneTransforms = skinRenderer.bones;
         for (int i = 0; i < boneCount; i++)
         {
-            boneDQ[i] = new dualQuat(transform.worldToLocalMatrix * boneTransforms[i].localToWorldMatrix);
+            boneDQ[i] = new DualQuat(transform.worldToLocalMatrix * boneTransforms[i].localToWorldMatrix);
         }
 
         bones.SetData(boneDQ);
@@ -66,8 +66,8 @@ public class DualQuaternionSkinning : MonoBehaviour
 
     private unsafe void SetBuffersUnsafe()
     {
-        bones = new ComputeBuffer(boneTransforms.Length, sizeof(dualQuat));
-        bindPose = new ComputeBuffer(boneTransforms.Length, sizeof(dualQuat));
+        bones = new ComputeBuffer(boneTransforms.Length, sizeof(DualQuat));
+        bindPose = new ComputeBuffer(boneTransforms.Length, sizeof(DualQuat));
     }
 
     private void OnDestroy()
