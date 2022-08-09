@@ -13,7 +13,7 @@ public class SkinningDataEditor : EditorWindow
     public Transform rootBone;
 
     private GameObject GOI;
-    private Mesh replacementMesh; //empty mesh
+    private Mesh replacementMesh;
     private List<BoneWeight> boneWeights;
 
     private string previousPrefabPath;
@@ -56,22 +56,23 @@ public class SkinningDataEditor : EditorWindow
                 "");
         if (folderPath != ""){
             string relativeFolderPath = "Assets" + Path.DirectorySeparatorChar + GetRelativePath(folderPath, Application.dataPath);
+
             ///---Modify each Game Object on Prefab with a SkinnedMeshRenderer---///
             SkinnedMeshRenderer[] skinRenderers = GOI.GetComponentsInChildren<SkinnedMeshRenderer>();//modify to allow Mesh renderer on root object
             for (int i = 0; i < skinRenderers.Length; i++)
             {
-                //Modify meshes to include bone ids and weights
+                // Modify meshes to include bone ids and weights
                 Mesh mesh = new Mesh();
                 string objName = skinRenderers[i].sharedMesh.name;
                 string meshPath = (relativeFolderPath + Path.DirectorySeparatorChar + objName + "_Modified.asset");
                 mesh = ModifyMesh(skinRenderers[i].gameObject);
                 AssetDatabase.CreateAsset(mesh, meshPath);
 
-                //Precomputed data needed for runtime
+                // Precomputed data needed for runtime
                 SkinningData skinningData = ScriptableObject.CreateInstance<SkinningData>();
                 string scrObjPath = (relativeFolderPath + Path.DirectorySeparatorChar + objName + "_SkinningData.asset");
 
-                //Modify prefab to prepare for custom skinning
+                // Modify prefab to prepare for custom skinning
                 skinningData = ModifyPrefab(skinRenderers[i].gameObject, mesh,skinningData);
                 AssetDatabase.CreateAsset(skinningData, scrObjPath);
 
@@ -96,9 +97,7 @@ public class SkinningDataEditor : EditorWindow
         Mesh mesh = Instantiate(skinnedMeshRenderer.sharedMesh);
         boneWeights = new List<BoneWeight>();
 
-        //use GetAllBoneWeights and the associated api's for more bones per vertex
         mesh.GetBoneWeights(boneWeights);
-        //Debug.Log("index: " + boneWeights[0].boneIndex0 + " weight: " + boneWeights[0].weight0);
 
         int size = mesh.vertexCount;
         Vector4[] indices = new Vector4[size];
@@ -128,7 +127,7 @@ public class SkinningDataEditor : EditorWindow
     }
     private SkinningData ModifyPrefab(GameObject go, Mesh mesh, SkinningData skinningData)
     {
-        //swap mesh renderers
+        // Swap mesh renderers
         SkinnedMeshRenderer skinRenderer = go.GetComponent<SkinnedMeshRenderer>();
         go.AddComponent<MeshFilter>().mesh = mesh;
         MeshRenderer meshRenderer = go.AddComponent<MeshRenderer>();
@@ -138,22 +137,22 @@ public class SkinningDataEditor : EditorWindow
         skinRenderer.quality = SkinQuality.Bone1;
         skinRenderer.shadowCastingMode = ShadowCastingMode.Off;
 
-        //precompute skinning data
+        // Precompute skinning data
         Transform[] boneTransforms = skinRenderer.bones;
         int boneCount = boneTransforms.Length;
 
         Matrix4x4[] bindMatrices = new Matrix4x4[boneCount];
-        dualQuat[] bindDQs = new dualQuat[boneCount];
+        DualQuat[] bindDQs = new DualQuat[boneCount];
         for (int i = 0; i < boneCount; i++)
         {
             bindMatrices[i] = go.transform.worldToLocalMatrix * boneTransforms[i].localToWorldMatrix;
             bindMatrices[i] = bindMatrices[i].inverse;
-            bindDQs[i] = new dualQuat(bindMatrices[i]);
+            bindDQs[i] = new DualQuat(bindMatrices[i]);
         }
         skinningData.bindMatrices = bindMatrices;
         skinningData.bindDQs = bindDQs;
 
-        //initialize skinning controller
+        // Initialize skinning controller
         SkinningController controller = go.AddComponent<SkinningController>();
         controller.skinningData = skinningData;
         controller.meshRenderer = meshRenderer;

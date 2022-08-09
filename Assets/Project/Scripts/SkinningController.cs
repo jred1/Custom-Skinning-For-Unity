@@ -14,7 +14,7 @@ public class SkinningController : MonoBehaviour
 
     public Transform[] boneTransforms;
 
-    private dualQuat[] boneDQs;
+    private DualQuat[] boneDQs;
     private Matrix4x4[] boneMatrices;
 
     private ComputeBuffer bones;
@@ -39,7 +39,7 @@ public class SkinningController : MonoBehaviour
             properties.SetBuffer("bindPose", bindPose);
         }
         if (fixedType == 1){
-            boneDQs = new dualQuat[boneCount];
+            boneDQs = new DualQuat[boneCount];
 
             SetBuffersUnsafe_DQ();
             bindPose.SetData(skinningData.bindDQs);
@@ -62,7 +62,7 @@ public class SkinningController : MonoBehaviour
         }
         if (fixedType == 1){
             for (int i = 0; i < boneCount; i++)
-                boneDQs[i] = new dualQuat(meshMatrix * boneTransforms[i].localToWorldMatrix);
+                boneDQs[i] = new DualQuat(meshMatrix * boneTransforms[i].localToWorldMatrix);
             bones.SetData(boneDQs);
         }
 
@@ -74,13 +74,13 @@ public class SkinningController : MonoBehaviour
     }
     private unsafe void SetBuffersUnsafe_DQ()
     {
-        bones = new ComputeBuffer(skinningData.bindMatrices.Length, sizeof(dualQuat));
-        bindPose = new ComputeBuffer(skinningData.bindMatrices.Length, sizeof(dualQuat));
+        bones = new ComputeBuffer(skinningData.bindMatrices.Length, sizeof(DualQuat));
+        bindPose = new ComputeBuffer(skinningData.bindMatrices.Length, sizeof(DualQuat));
     }
 
     private void OnDestroy()
     {
-        bones.Release();
-        bindPose.Release();
+        bones?.Release();
+        bindPose?.Release();
     }
 }

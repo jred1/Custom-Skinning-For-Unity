@@ -5,80 +5,56 @@ using Unity.Mathematics;
 using System;
 
 [Serializable] 
-public struct dualQuat
+public struct DualQuat
 {
-    public quat qReal;
-    public quat qDual;
+    public Quat qReal { get; private set; }
+    public Quat qDual { get; private set; }
 
     #region Constructors
-    public dualQuat(quat real, quat dual){
+    public DualQuat(Quat real, Quat dual){
         qReal = real;
         qDual = dual;
     }
 
-    public dualQuat(Matrix4x4 transform){
-        qReal = new quat(transform);
+    public DualQuat(Matrix4x4 transform){
+        qReal = new Quat(transform);
         float3 translation = new float3(transform.m03,transform.m13,transform.m23);
-        qDual = quat_dual_from(qReal,translation);
+        qDual = qDualFrom(qReal,translation);
     }
     #endregion
 
     #region Methods
-
     //Expensive?
-    private static quat quat_dual_from( quat q, float3 t){
-        float x =  0.5f*( t.x * q.w() + t.y * q.z() - t.z * q.y());
-        float y =  0.5f*(-t.x * q.z() + t.y * q.w() + t.z * q.x());
-        float z =  0.5f*( t.x * q.y() - t.y * q.x() + t.z * q.w());
-        float w = -0.5f*( t.x * q.x() + t.y * q.y() + t.z * q.z());
+    private static Quat qDualFrom(Quat q, float3 t){
+        float x =  0.5f*( t.x * q.coeff.w + t.y * q.coeff.z - t.z * q.coeff.y);
+        float y =  0.5f*(-t.x * q.coeff.z + t.y * q.coeff.w + t.z * q.coeff.x);
+        float z =  0.5f*( t.x * q.coeff.y - t.y * q.coeff.x + t.z * q.coeff.w);
+        float w = -0.5f*( t.x * q.coeff.x + t.y * q.coeff.y + t.z * q.coeff.z);
 
-        return new quat(x,y,z,w);
+        return new Quat(x,y,z,w);
     }
 
-    public static dualQuat identity(){
-        return new dualQuat(new quat(0, 0, 0, 1), new quat(0, 0, 0, 0));
+    public static DualQuat Identity(){
+        return new DualQuat(new Quat(0, 0, 0, 1), new Quat(0, 0, 0, 0));
     }
 
-    public float3 move(float3 v3){
-        //Normalize
-        float norm = qReal.norm();
-        quat qBlendReal = qReal / norm;
-        quat qBlendDual = qDual / norm;
-
-        //Translation: 2.f * qblend_e * conjugate(qblend_0)
-        float3 vReal = qBlendReal.xyz();
-        float3 vDual = qBlendDual.xyz();
-        float3 trans = (vDual * qBlendReal.w() -
-                        vReal * qBlendDual.w() +
-                        math.cross(vReal,vDual))
-                        * 2.0f;
-
-        // Rotate
-        return qBlendReal.rotate(v3) + trans;
-    }
-
-    public float3 rotate(float3 n3){
-        quat tmp = qReal;
-        tmp.normalize();
-        return tmp.rotate(n3);
-    }
-    public static dualQuat normalize( dualQuat q)
+    public static DualQuat Normalize(DualQuat q)
     {
-        float mag = q.qReal.dot(q.qReal);
-        dualQuat tmp = q;
+        float mag = q.qReal.Dot(q.qReal);
+        DualQuat tmp = q;
         tmp.qReal *= 1.0f / mag;
         tmp.qDual *= 1.0f / mag;
         return tmp;
     }
 
-    public static Matrix4x4 DualQuaternionToMatrix(dualQuat q )
+    public static Matrix4x4 DualQuaternionToMatrix(DualQuat q)
     {
-        q = dualQuat.normalize( q );
+        q = DualQuat.Normalize( q );
         Matrix4x4 M = Matrix4x4.identity;
-        float w = q.qReal.w();
-        float x = q.qReal.x();
-        float y = q.qReal.y();
-        float z = q.qReal.z();
+        float w = q.qReal.coeff.w;
+        float x = q.qReal.coeff.x;
+        float y = q.qReal.coeff.y;
+        float z = q.qReal.coeff.z;
         // Extract rotational information
         M.m00 = w*w + x*x - y*y - z*z;
         M.m10 = 2*x*y + 2*w*z;
@@ -91,39 +67,59 @@ public struct dualQuat
         M.m12 = 2*y*z - 2*w*x;
         M.m22 = w*w + z*z - x*x - y*y;
         // Extract translation information
-        quat t = (q.qDual * 2.0f) * q.qReal.conjugate();
-        M.m03 = t.x();
-        M.m13 = t.y();
-        M.m23 = t.z();
+        Quat t = (q.qDual * 2.0f) * q.qReal.Conjugate();
+        M.m03 = t.coeff.x;
+        M.m13 = t.coeff.y;
+        M.m23 = t.coeff.z;
         return M;
+    }
+
+    public float3 Move(float3 v3){
+        //Normalize
+        float norm = qReal.Norm();
+        Quat qBlendReal = qReal / norm;
+        Quat qBlendDual = qDual / norm;
+
+        //Translation: 2.f * qblend_e * conjugate(qblend_0)
+        float3 vReal = qBlendReal.coeff.xyz;
+        float3 vDual = qBlendDual.coeff.xyz;
+        float3 trans = (vDual * qBlendReal.coeff.w -
+                        vReal * qBlendDual.coeff.w +
+                        math.cross(vReal,vDual))
+                        * 2.0f;
+
+        // Rotate
+        return qBlendReal.Rotate(v3) + trans;
+    }
+
+    public float3 Rotate(float3 n3){
+        Quat tmp = qReal;
+        tmp.Normalize();
+        return tmp.Rotate(n3);
     }
     #endregion
 
     #region Operators
-    public static dualQuat operator +(dualQuat dq1, dualQuat dq2) {
-        return new dualQuat(dq1.qReal + dq2.qReal, dq1.qDual + dq2.qDual);
+    public static DualQuat operator +(DualQuat dq1, DualQuat dq2) {
+        return new DualQuat(dq1.qReal + dq2.qReal, dq1.qDual + dq2.qDual);
     }
 
-    public static dualQuat operator *(dualQuat dq1, dualQuat dq2) {
-        return new dualQuat(dq1.qReal*dq2.qReal, 
+    public static DualQuat operator *(DualQuat dq1, DualQuat dq2) {
+        return new DualQuat(dq1.qReal*dq2.qReal, 
                             dq1.qDual*dq2.qReal + dq1.qReal*dq2.qDual);
     }
 
-    public static dualQuat operator *(dualQuat dq1, float f1) {
-        return new dualQuat(dq1.qReal * f1, dq1.qDual * f1);
+    public static DualQuat operator *(DualQuat dq1, float f1) {
+        return new DualQuat(dq1.qReal * f1, dq1.qDual * f1);
     }
 
-    public static dualQuat operator *(float f1, dualQuat dq1) {
-        return new dualQuat(dq1.qReal * f1, dq1.qDual * f1);
+    public static DualQuat operator *(float f1, DualQuat dq1) {
+        return new DualQuat(dq1.qReal * f1, dq1.qDual * f1);
     }
-    #endregion
-
-    #region Getters
-    public quat rotation(){ return qReal; }
     #endregion
 
     public override string ToString(){
-        return "real: ( " + qReal.x() + ", " + qReal.y() + ", " + qReal.z() + ", " + qReal.w() + ")\n" + 
-               "dual: ( " + qDual.x() + ", " + qDual.y() + ", " + qDual.z() + ", " + qDual.w() + ")\n";
+        return "real: ( " + qReal.coeff.x + ", " + qReal.coeff.y + ", " + qReal.coeff.z + ", " + qReal.coeff.w + ")\n" + 
+               "dual: ( " + qDual.coeff.x + ", " + qDual.coeff.y + ", " + qDual.coeff.z + ", " + qDual.coeff.w + ")\n";
     }
 }

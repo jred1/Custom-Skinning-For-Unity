@@ -5,12 +5,12 @@ using Unity.Mathematics;
 using System;
 
 [Serializable]
-public struct quat
+public struct Quat
 {
-    public float4 coeff;
+    public float4 coeff { get; private set; }
 
     #region Constructors
-    public quat(Matrix4x4 t)
+    public Quat(Matrix4x4 t)
     {
         float trace = 1.0f + t.m00 + t.m11 + t.m22;
 
@@ -52,79 +52,78 @@ public struct quat
         coeff = new float4(-X,-Y,-Z,W);
     }
 
-    public quat(float x, float y, float z, float w){
+    public Quat(float x, float y, float z, float w){
         coeff = new float4(x,y,z,w);
     }
 
-    public quat(float3 xyz, float w){
+    public Quat(float3 xyz, float w){
         coeff = new float4(xyz,w);
     }
     #endregion
 
     #region Methods
-    public quat conjugate(){
-        return new quat(-coeff.xyz, coeff.w);
+    public Quat Conjugate(){
+        return new Quat(-coeff.xyz, coeff.w);
     }
 
-    public float3 rotate(float3 v3){
+    public float3 Rotate(float3 v3){
         return v3 + math.cross(coeff.xyz*2.0f, math.cross(coeff.xyz,v3) + v3 * coeff.w);
     }
 
-    public float norm(){
+    public float Norm(){
         return math.sqrt(coeff.x * coeff.x +
                          coeff.y * coeff.y +
                          coeff.z * coeff.z +
                          coeff.w * coeff.w );
     }
 
-    public float normalize(){
-        float n = norm();
+    public float Normalize(){
+        float n = Norm();
         coeff /= n;
         return n;
     }
 
-    public float dot(quat q){
+    public float Dot(Quat q){
         return math.dot(coeff, q.coeff);
     }
     #endregion
 
     #region Operators
-    public static quat operator *(quat q1, quat q2)
+    public static Quat operator *(Quat q1, Quat q2)
     {
-        //when q = (v,w), (w1*v2+w2*v1+(v1xv2),w1*w2-v1*v2)
-        return new quat(
+        return new Quat(
         q1.coeff.w*q2.coeff.x + q1.coeff.x*q2.coeff.w + q1.coeff.y*q2.coeff.z - q1.coeff.z*q2.coeff.y,
         q1.coeff.w*q2.coeff.y + q1.coeff.y*q2.coeff.w + q1.coeff.z*q2.coeff.x - q1.coeff.x*q2.coeff.z,
         q1.coeff.w*q2.coeff.z + q1.coeff.z*q2.coeff.w + q1.coeff.x*q2.coeff.y - q1.coeff.y*q2.coeff.x,
         q1.coeff.w*q2.coeff.w - q1.coeff.x*q2.coeff.x - q1.coeff.y*q2.coeff.y - q1.coeff.z*q2.coeff.z);
     }
-    public static quat operator *(quat q1, float f1)
+    public static Quat operator *(Quat q1, float f1)
     {
-        return new quat(
+        return new Quat(
         q1.coeff.x * f1,
         q1.coeff.y * f1,
         q1.coeff.z * f1,
         q1.coeff.w * f1);
     }
-    public static quat operator *(float f1,quat q1)
+    public static Quat operator *(float f1,Quat q1)
     {
-        return new quat(
+        return new Quat(
         q1.coeff.x * f1,
         q1.coeff.y * f1,
         q1.coeff.z * f1,
         q1.coeff.w * f1);
     }
-    public static quat operator /(quat q1, float f1)
+    public static Quat operator /(Quat q1, float f1)
     {
-        return new quat(
+        return new Quat(
         q1.coeff.x / f1,
         q1.coeff.y / f1,
         q1.coeff.z / f1,
         q1.coeff.w / f1);
     }
-    public static quat operator +(quat q1, quat q2)
+    public static Quat operator +(Quat q1, Quat q2)
     {
-        return new quat(
+        return new Quat(
         q1.coeff.x + q2.coeff.x,
         q1.coeff.y + q2.coeff.y,
         q1.coeff.z + q2.coeff.z,
@@ -132,11 +131,4 @@ public struct quat
     }
     #endregion
 
-    #region Getters
-    public float x() { return coeff.x; }
-    public float y() { return coeff.y; }
-    public float z() { return coeff.z; }
-    public float3 xyz() { return coeff.xyz; }
-    public float w() { return coeff.w; }
-    #endregion
 };
