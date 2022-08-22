@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Mathematics;
-using System;
 
-[Serializable]
+[System.Serializable]
 public struct Quat
 {
+    [field: SerializeField]
     public float4 coeff { get; private set; }
 
     #region Constructors

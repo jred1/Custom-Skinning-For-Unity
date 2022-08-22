@@ -46,26 +46,26 @@ MonoBehaviour:
     e32: 0
     e33: 1
   bindDQs:
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.0021033313
         y: 0.7332667
         z: -0.6737967
         w: 0.0019411675
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.03210678
         y: 0.00009265297
         z: -0.0001753656
         w: -0.061081234
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.00197262
         y: 0.6796226
         z: -0.7316257
         w: 0.0021226725
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.036962155
         y: -0.000106927786
         z: -0.0000016416158

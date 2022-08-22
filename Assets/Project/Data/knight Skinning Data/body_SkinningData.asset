@@ -1038,770 +1038,770 @@ MonoBehaviour:
     e32: 0
     e33: 1
   bindDQs:
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.002329265
         y: 0.73399657
         z: -0.67446727
         w: 0.0021942966
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.04102164
         y: 0.00014193758
         z: -0.00021757105
         w: -0.070809014
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.00024271866
         y: -0.71125805
         z: -0.70293075
         w: -0.0002455942
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.076670825
         y: -0.05159765
         z: 0.05216392
         w: 0.052981496
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.0002735581
         y: -0.61020386
         z: -0.7922442
         w: -0.00021070043
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.22719084
         y: -0.05818493
         z: 0.04469684
         w: 0.15048356
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.05230795
         y: -0.91343725
         z: -0.40239835
         w: 0.007941141
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.1562078
         y: -0.02454743
         z: 0.04379435
         w: 0.4245168
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.098403975
         y: -0.9939031
         z: -0.034984346
         w: 0.034490857
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.03855897
         y: 0.012659289
         z: 0.027083386
         w: 0.5022768
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.098403975
         y: -0.9939031
         z: -0.034984346
         w: 0.034490857
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.09417352
         y: 0.007153027
         z: 0.029013345
         w: 0.50423443
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.00024271046
         y: -0.711258
         z: -0.70293075
         w: -0.00024560027
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.07663482
         y: 0.051561054
         z: -0.052216854
         w: 0.05301715
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.00027355095
         y: -0.610204
         z: -0.79224414
         w: -0.00021070776
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.22715996
         y: 0.058080986
         z: -0.044853732
         w: 0.1505237
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.0520786
         y: 0.9141454
         z: 0.40275154
         w: 0.008565823
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.15629901
         y: -0.024279969
         z: 0.043935064
         w: -0.42486602
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.09838204
         y: 0.9939044
         z: 0.035053
         w: 0.035176378
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.038541213
         y: 0.013005627
         z: 0.027110472
         w: -0.5022807
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.09838001
         y: 0.9938867
         z: 0.03505237
         w: 0.03517701
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.09415421
         y: 0.007501118
         z: 0.029078273
         w: -0.5042332
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.002231158
         y: 0.67974836
         z: -0.7317612
         w: 0.0023575693
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.027331518
         y: -0.00007573024
         z: -0.000018046205
         w: -0.0096323555
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.0023332583
         y: 0.7149304
         z: -0.69754326
         w: 0.002279951
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.08530988
         y: -0.0002701203
         z: 0.00020497805
         w: 0.0601102
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.059501708
         y: -0.70581543
         z: -0.059709195
         w: 0.70336264
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.025397265
         y: -0.13295925
         z: 0.0043002972
         w: -0.13520636
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.21265481
         y: -0.7363701
         z: -0.23466125
         w: 0.5978887
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.028445926
         y: -0.12544946
         z: 0.025542254
         w: -0.15459836
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.3213404
         y: -0.83504266
         z: -0.29686227
         w: 0.33364096
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.06756725
         y: -0.08005524
         z: 0.12030778
         w: -0.15839417
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.39536202
         y: 0.71208245
         z: 0.57584137
         w: 0.07096031
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.055069905
         y: 0.09478393
         z: -0.17589015
         w: 0.16936651
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.49273926
         y: 0.71012455
         z: 0.47385362
         w: 0.16849697
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.047012407
         y: 0.051633798
         z: -0.1858555
         w: 0.16758174
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.45250115
         y: 0.7528506
         z: 0.472038
         w: 0.07497771
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.09252322
         y: 0.040941734
         z: -0.17696692
         w: 0.14464621
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.5091346
         y: 0.74962175
         z: 0.3955655
         w: 0.1495825
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.088569835
         y: 0.011408064
         z: -0.18726677
         w: 0.136584
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.50913453
         y: 0.7496213
         z: 0.3955653
         w: 0.14958258
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.0992146
         y: 0.004178198
         z: -0.18514264
         w: 0.13096684
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.14623916
         y: -0.700042
         z: -0.6683842
         w: 0.20449464
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.16457787
         y: -0.15419367
         z: 0.16826491
         w: -0.095572986
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.23334907
         y: -0.6425924
         z: -0.72310925
         w: 0.09867488
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.14425887
         y: -0.16140594
         z: 0.17400795
         w: -0.117093
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.24833892
         y: -0.55128676
         z: -0.7938936
         w: 0.064302325
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.13728364
         y: -0.17767657
         z: 0.15610719
         w: -0.12614036
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.24833892
         y: -0.55128676
         z: -0.7938936
         w: 0.064302325
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.14307733
         y: -0.17506664
         z: 0.15678294
         w: -0.11779692
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.20643528
         y: -0.7228869
         z: -0.6431153
         w: 0.14567778
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.16094115
         y: -0.13415194
         z: 0.17658173
         w: -0.11421238
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.23646386
         y: -0.6928513
         z: -0.6729197
         w: 0.10590957
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.16328152
         y: -0.13573244
         z: 0.17911227
         w: -0.11447887
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.27271652
         y: -0.6556902
         z: -0.7018465
         w: 0.055694018
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.15842715
         y: -0.13802089
         z: 0.18099605
         w: -0.11981903
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.27271634
         y: -0.65568954
         z: -0.7018459
         w: 0.055694055
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.1671666
         y: -0.13438572
         z: 0.18173817
         w: -0.11046403
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.20916833
         y: -0.80860263
         z: -0.5278366
         w: 0.1542617
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.17399251
         y: -0.096078575
         z: 0.18642034
         w: -0.101669
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.24077146
         y: -0.7463645
         z: -0.61263907
         w: 0.09814648
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.17610063
         y: -0.11019295
         z: 0.18540142
         w: -0.112688154
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.26009
         y: -0.6493546
         z: -0.7129297
         w: 0.048909314
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.16771394
         y: -0.13171357
         z: 0.1721847
         w: -0.13073038
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.2600899
         y: -0.64935297
         z: -0.7129275
         w: 0.048909444
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.17832083
         y: -0.12746456
         z: 0.17298338
         w: -0.11908388
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.275301
         y: -0.8139901
         z: -0.50085396
         w: 0.103787266
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.16221645
         y: -0.07322253
         z: 0.1842599
         w: -0.11536549
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.29101998
         y: -0.7401204
         z: -0.6036384
         w: 0.055985194
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.16260305
         y: -0.090831906
         z: 0.17788549
         w: -0.12804765
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.28711277
         y: -0.7208777
         z: -0.6284518
         w: 0.05426947
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.17101565
         y: -0.09317375
         z: 0.1743014
         w: -0.123966955
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.28711277
         y: -0.7208777
         z: -0.6284518
         w: 0.05426947
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.18061462
         y: -0.089350656
         z: 0.17502405
         w: -0.11559873
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.059542935
         y: 0.70532936
         z: 0.059668113
         w: 0.70384985
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.025394294
         y: -0.13305256
         z: 0.0043178587
         w: 0.13511445
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.21281701
         y: 0.7359568
         z: 0.23451433
         w: 0.5983972
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.028428253
         y: -0.12555616
         z: 0.025561865
         w: 0.15451159
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.3215455
         y: 0.8348123
         z: 0.2966403
         w: 0.3342173
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.06748405
         y: -0.08016457
         z: 0.120354466
         w: 0.15833883
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.39575815
         y: -0.7121289
         z: -0.5755664
         w: 0.07046878
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.054948293
         y: 0.09490045
         z: -0.17592753
         w: -0.16930036
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.49306676
         y: -0.710241
         z: -0.4735138
         w: 0.16800646
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.046884075
         y: 0.051749695
         z: -0.18588802
         w: -0.16754599
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.45283103
         y: -0.7529101
         z: -0.4717302
         w: 0.074457034
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.09240175
         y: 0.041042384
         z: -0.17703241
         w: -0.14461939
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.5094089
         y: -0.74972564
         z: -0.39521527
         w: 0.14906448
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.08844075
         y: 0.011502627
         z: -0.18732819
         w: -0.13657606
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.50940853
         y: -0.7497252
         z: -0.39521495
         w: 0.14906457
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.09908696
         y: 0.004268848
         z: -0.18521133
         w: -0.13096389
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.14670053
         y: 0.6999004
         z: 0.66828275
         w: 0.20497808
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.16446152
         y: -0.1542595
         z: 0.16837837
         w: 0.09546639
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.23384762
         y: 0.64252335
         z: 0.72294676
         w: 0.09911868
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.1441384
         y: -0.16148643
         z: 0.17410712
         w: 0.116981395
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.2488863
         y: 0.55124265
         z: 0.793721
         w: 0.06468304
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.13717553
         y: -0.17776342
         z: 0.15620182
         w: 0.12601773
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.24888742
         y: 0.55124426
         z: 0.7937237
         w: 0.06468281
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.1429694
         y: -0.17514822
         z: 0.15688215
         w: 0.11767643
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.20687889
         y: 0.7227848
         z: 0.6429719
         w: 0.14617723
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.16081892
         y: -0.13423066
         z: 0.17669246
         w: 0.114119284
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.2369282
         y: 0.69277906
         z: 0.67275715
         w: 0.10638792
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.16315807
         y: -0.13581161
         z: 0.1792251
         w: 0.11438535
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.2731989
         y: 0.6556506
         z: 0.7016566
         w: 0.05614679
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.15830174
         y: -0.13810332
         z: 0.18110469
         w: 0.11972356
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.27319896
         y: 0.65564686
         z: 0.70165235
         w: 0.0561471
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.1670397
         y: -0.13446121
         z: 0.1818524
         w: 0.11037037
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.20953277
         y: 0.80849683
         z: 0.5276928
         w: 0.15481983
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.17386393
         y: -0.09614879
         z: 0.18654051
         w: 0.10160262
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.24119534
         y: 0.7462981
         z: 0.612474
         w: 0.09866174
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.17597292
         y: -0.11027085
         z: 0.18552339
         w: 0.1126122
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.26058203
         y: 0.64932287
         z: 0.71275085
         w: 0.049357582
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.16759522
         y: -0.13180389
         z: 0.17230076
         w: 0.13063997
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.26058203
         y: 0.64932287
         z: 0.71275085
         w: 0.049357582
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.17820238
         y: -0.1275471
         z: 0.17310704
         w: 0.118996784
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.2756481
         y: 0.81391996
         z: 0.5006651
         w: 0.10434913
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.16208956
         y: -0.07330219
         z: 0.1843723
         w: 0.115314856
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.29144225
         y: 0.74009615
         z: 0.60344774
         w: 0.056495283
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.16248335
         y: -0.09092126
         z: 0.178001
         w: 0.12798741
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.28754938
         y: 0.7208496
         z: 0.62826174
         w: 0.054766487
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.17089768
         y: -0.09326021
         z: 0.17442141
         w: 0.123904176
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: 0.2875483
         y: 0.72084796
         z: 0.6282605
         w: 0.054766588
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.1804959
         y: -0.08943118
         z: 0.17515019
         w: 0.115538225
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.0030007968
         y: 0.85807186
         z: -0.52398354
         w: 0.001966431
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.13382441
         y: -0.0005015502
         z: 0.0006083779
         w: 0.17674978
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.0028201784
         y: 0.7193729
         z: -0.6985259
         w: 0.0027317067
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.21537407
         y: -0.00082704786
         z: 0.00063616707
         w: 0.15812157
-  - qReal:
-      coeff:
+  - <qReal>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.0028201784
         y: 0.7193729
         z: -0.6985259
         w: 0.0027317067
-    qDual:
-      coeff:
+    <qDual>k__BackingField:
+      <coeff>k__BackingField:
         x: -0.27728915
         y: -0.0010697754
         z: 0.00087128
