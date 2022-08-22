@@ -1596,7 +1596,7 @@
     "m_Group": {
         "m_Id": ""
     },
-    "m_Name": "Linear_Opt (Custom Function)",
+    "m_Name": "Linear (Custom Function)",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
@@ -1638,7 +1638,7 @@
         "m_SerializableColors": []
     },
     "m_SourceType": 0,
-    "m_FunctionName": "Linear_Opt",
+    "m_FunctionName": "Linear",
     "m_FunctionSource": "1af873ef78c057d4f9b1622ffa2f5155",
     "m_FunctionBody": "Enter function body here..."
 }
@@ -2070,8 +2070,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -338.0000915527344,
-            "y": -442.0,
+            "x": -338.0,
+            "y": -394.0,
             "width": 246.0,
             "height": 190.0
         }
@@ -3520,4 +3520,3 @@
     "m_Labels": [],
     "m_Space": 0
 }
-

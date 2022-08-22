@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Mathematics;
-using System;
 
-[Serializable] 
+[System.Serializable]
 public struct DualQuat
 {
+    [field: SerializeField]
     public Quat qReal { get; private set; }
+
+    [field: SerializeField]
     public Quat qDual { get; private set; }
 
     #region Constructors

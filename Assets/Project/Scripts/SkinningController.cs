@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SkinningController : MonoBehaviour
 {
-    [Tooltip("0 for direct; 1 for linear; 2 for dual quaternion")]
+    [Tooltip("0 for linear; 1 for dual quaternion")]
     public int skinningType; 
     public SkinningData skinningData;
 
@@ -32,7 +32,7 @@ public class SkinningController : MonoBehaviour
         if (fixedType == 0){
             boneMatrices = new Matrix4x4[boneCount];
 
-            SetBuffersUnsafe();
+            SetBuffers_M();
             bindPose.SetData(skinningData.bindMatrices);
             bones.SetData(boneMatrices);
             properties.SetBuffer("bones", bones);
@@ -41,7 +41,7 @@ public class SkinningController : MonoBehaviour
         if (fixedType == 1){
             boneDQs = new DualQuat[boneCount];
 
-            SetBuffersUnsafe_DQ();
+            SetBuffers_DQ();
             bindPose.SetData(skinningData.bindDQs);
             bones.SetData(boneDQs);
             properties.SetBuffer("bonesDQ", bones);
@@ -67,15 +67,15 @@ public class SkinningController : MonoBehaviour
         }
 
     }
-    private unsafe void SetBuffersUnsafe()
+    private void SetBuffers_M()
     {
-        bones = new ComputeBuffer(skinningData.bindMatrices.Length, sizeof(Matrix4x4));
-        bindPose = new ComputeBuffer(skinningData.bindMatrices.Length, sizeof(Matrix4x4));
+        bones = new ComputeBuffer(skinningData.bindMatrices.Length, 16 * sizeof(float));
+        bindPose = new ComputeBuffer(skinningData.bindMatrices.Length, 16 * sizeof(float));
     }
-    private unsafe void SetBuffersUnsafe_DQ()
+    private void SetBuffers_DQ()
     {
-        bones = new ComputeBuffer(skinningData.bindMatrices.Length, sizeof(DualQuat));
-        bindPose = new ComputeBuffer(skinningData.bindMatrices.Length, sizeof(DualQuat));
+        bones = new ComputeBuffer(skinningData.bindMatrices.Length, 8 * sizeof(float));
+        bindPose = new ComputeBuffer(skinningData.bindMatrices.Length, 8 * sizeof(float));
     }
 
     private void OnDestroy()
