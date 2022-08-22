@@ -60,6 +60,7 @@ public struct Quat
         coeff = new float4(xyz,w);
     }
     #endregion
+    #endregion
 
     #region Methods
     public Quat Conjugate(){
@@ -130,5 +131,13 @@ public struct Quat
         q1.coeff.w + q2.coeff.w);
     }
     #endregion
+    #endregion
 
+    #region Getters
+    public float x() { return coeff.x; }
+    public float y() { return coeff.y; }
+    public float z() { return coeff.z; }
+    public float3 xyz() { return coeff.xyz; }
+    public float w() { return coeff.w; }
+    #endregion
 };

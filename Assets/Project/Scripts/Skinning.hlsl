@@ -4,6 +4,8 @@
 
 #include "Assets/Project/Scripts/DualQuaternion.hlsl"
 
+#include "Assets/Project/Scripts/DualQuaternion.hlsl"
+
 StructuredBuffer<float4x4> bones;
 StructuredBuffer<float4x4> bindPose;
 
