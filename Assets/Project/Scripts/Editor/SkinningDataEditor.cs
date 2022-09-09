@@ -18,10 +18,10 @@ public class SkinningDataEditor : EditorWindow
 
     private string previousPrefabPath;
 
-    [MenuItem("Window/Skinning/Data Bake")]
+    [MenuItem("Window/Skinning/Data Edit")]
     public static void ShowWindow()
     {
-        GetWindow<SkinningDataEditor>("Skinning Data Bake");
+        GetWindow<SkinningDataEditor>("Skinning Data Edit");
     }
     private void OnGUI()
     {

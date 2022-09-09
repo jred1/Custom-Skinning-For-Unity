@@ -116,15 +116,15 @@ public class CenterOfRotationsCPU : MonoBehaviour
     private void OnDrawGizmos() {
         // draw similarity results
         if (!update && displayGizmos){
-            int counter = 0;
+            //int counter = 0;//number of optimized centers of rotation
             for (int i = 0; i < vertCount; i++){
                 if (!(float.IsNaN(opt_CoRs[i].x) || float.IsNaN(opt_CoRs[i].y) || float.IsNaN(opt_CoRs[i].z))){
                     Gizmos.color = Color.red;
                     Gizmos.DrawSphere(transform.TransformPoint(opt_CoRs[i]),gizmosScale*0.1f);
-                    counter++;
+                    //counter++;
                 }
             }
-            Debug.Log(counter);
+            //Debug.Log(counter);
         }
     }
 
