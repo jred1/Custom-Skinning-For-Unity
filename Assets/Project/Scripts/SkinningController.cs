@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SkinningController : MonoBehaviour
 {
-    [Tooltip("0 for linear; 1 for dual quaternion")]
+    [Tooltip("0 for linear or Opt CoR; 1 for dual quaternion")]
     public int skinningType; 
     public SkinningData skinningData;
 
@@ -49,11 +49,12 @@ public class SkinningController : MonoBehaviour
         }
 
         meshRenderer.SetPropertyBlock(properties);
+        boneTransforms = skinRenderer.bones;
+        skinRenderer.enabled = false;
     }
 
     void Update()
     {
-        boneTransforms = skinRenderer.bones;
         Matrix4x4 meshMatrix = transform.worldToLocalMatrix;
         if (fixedType == 0){
             for (int i = 0; i < boneCount; i++)

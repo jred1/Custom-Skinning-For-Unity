@@ -206,7 +206,7 @@ public class SkinningDataBake : EditorWindow
         for (int i = 0; i < vertCount; i++)
         {
             // w will be used to find if there is an optimized center of rotation
-            if (opt_CoRs[i].x != float.NaN){
+            if (!float.IsNaN(opt_CoRs[i].x)){
                 finalCoRs[i] = new Vector4(
                                 opt_CoRs[i].x,
                                 opt_CoRs[i].y,
