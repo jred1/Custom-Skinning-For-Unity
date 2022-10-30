@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &916503459358839655
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 07b75eaee1a9fbd4392949febeaeecd8, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 07b75eaee1a9fbd4392949febeaeecd8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 07b75eaee1a9fbd4392949febeaeecd8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 07b75eaee1a9fbd4392949febeaeecd8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 07b75eaee1a9fbd4392949febeaeecd8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 07b75eaee1a9fbd4392949febeaeecd8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 07b75eaee1a9fbd4392949febeaeecd8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 07b75eaee1a9fbd4392949febeaeecd8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 07b75eaee1a9fbd4392949febeaeecd8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 07b75eaee1a9fbd4392949febeaeecd8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 07b75eaee1a9fbd4392949febeaeecd8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -875632023476523298, guid: 07b75eaee1a9fbd4392949febeaeecd8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c36682df36ee084da2504f74135eaf1, type: 2}
+    - target: {fileID: 919132149155446097, guid: 07b75eaee1a9fbd4392949febeaeecd8, type: 3}
+      propertyPath: m_Name
+      value: cylinderSmooth
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 07b75eaee1a9fbd4392949febeaeecd8, type: 3}
+--- !u!1 &2736466103538266814 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6250448286238662183, guid: 07b75eaee1a9fbd4392949febeaeecd8, type: 3}
+  m_PrefabInstance: {fileID: 916503459358839655}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8153051334517877461 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -171866897263461966, guid: 07b75eaee1a9fbd4392949febeaeecd8, type: 3}
+  m_PrefabInstance: {fileID: 916503459358839655}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7354090467942279003 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7689589992867836988, guid: 07b75eaee1a9fbd4392949febeaeecd8, type: 3}
+  m_PrefabInstance: {fileID: 916503459358839655}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6165652553675876117 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -2798741570288569230, guid: 07b75eaee1a9fbd4392949febeaeecd8, type: 3}
+  m_PrefabInstance: {fileID: 916503459358839655}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4946199476959115643 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4027206263566833124, guid: 07b75eaee1a9fbd4392949febeaeecd8, type: 3}
+  m_PrefabInstance: {fileID: 916503459358839655}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7567495038335769540 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -1892295044656215901, guid: 07b75eaee1a9fbd4392949febeaeecd8, type: 3}
+  m_PrefabInstance: {fileID: 916503459358839655}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2178670867031207409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2736466103538266814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boneShape: 0
+  drawBones: 1
+  drawTripods: 0
+  boneSize: 5
+  tripodSize: 1
+  boneColor: {r: 1, g: 1, b: 1, a: 1}
+  m_Transforms:
+  - {fileID: 8153051334517877461}
+  - {fileID: 7354090467942279003}
+  - {fileID: 6165652553675876117}
+  - {fileID: 4946199476959115643}
+  - {fileID: 7567495038335769540}
