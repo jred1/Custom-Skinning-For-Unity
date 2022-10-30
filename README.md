@@ -1,2 +1,2 @@
 # Custom-Skinning-For-Unity
-Unity project for experimenting with custom mesh skinning solutions
+<img src="Assets/Project/animations/gifs/demo.gif" width="500" />
